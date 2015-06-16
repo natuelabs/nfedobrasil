@@ -13,17 +13,12 @@ module Savon
 
   class HTTPRequest
     def configure_ssl
-      @http_request.auth.ssl.ssl_version   = @globals[:ssl_version]       if @globals.include? :ssl_version
-      @http_request.auth.ssl.verify_mode   = @globals[:ssl_verify_mode]   if @globals.include? :ssl_verify_mode
+      @http_request.auth.ssl.ssl_version = @globals[:ssl_version] if @globals.include? :ssl_version
 
-      @http_request.auth.ssl.cert_key_file = @globals[:ssl_cert_key_file] if @globals.include? :ssl_cert_key_file
-      @http_request.auth.ssl.cert_key      = @globals[:ssl_cert_key]      if @globals.include? :ssl_cert_key
-      @http_request.auth.ssl.cert_file     = @globals[:ssl_cert_file]     if @globals.include? :ssl_cert_file
-      @http_request.auth.ssl.cert          = @globals[:ssl_cert]          if @globals.include? :ssl_cert
-      @http_request.auth.ssl.ca_cert_file  = @globals[:ssl_ca_cert_file]  if @globals.include? :ssl_ca_cert_file
-      @http_request.auth.ssl.ca_cert       = @globals[:ssl_ca_cert]       if @globals.include? :ssl_ca_cert
-
-      @http_request.auth.ssl.cert_key_password = @globals[:ssl_cert_key_password] if @globals.include? :ssl_cert_key_password
+      ['verify_mode', 'cert_key_file', 'cert_key', 'cert_file', 'cert', 'ca_cert_file', 'ca_cert', 'cert_key_password'].each do |key|
+        sym = "ssl_#{key}".to_sym
+        @http_request.auth.ssl.send("#{key}=", @globals[sym]) if @globals.include? sym
+      end
 
       if (@globals.include?(:ssl_plcs_file) and @globals.include?(:ssl_plcs_password))
         @http_request.auth.ssl.plcs_file @globals[:ssl_plcs_file], @globals[:ssl_plcs_password]
