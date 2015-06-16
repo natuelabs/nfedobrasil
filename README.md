@@ -1,4 +1,4 @@
-# Nfedobrasil
+# NfedoBrasil
 
 Gem to interact with NFEdoBrasil SOAP API.
 
@@ -20,7 +20,23 @@ Or install it yourself as:
 
 ## Usage
 
-TODO
+This gem is just a wrapper around [Savon](http://savonrb.com/) which [monkey
+patches](https://en.wikipedia.org/wiki/Monkey_patch) (yes... I know =[) both Savon and
+[HTTPI](http://httpirb.com/) so that they can work with P12 authentication
+required by NFEdoBrasil.
+
+```ruby
+require 'nfedobrasil'
+# For dev mode access:
+client = NfedoBrasil.client({ssl_plcs_file: './hml_natue.p12', ssl_plcs_password: 'y7bYntT3F'}, true)
+
+# For production access:
+client = NfedoBrasil.client({ssl_plcs_file: './hml_natue.p12', ssl_plcs_password: 'y7bYntT3F'})
+
+# Now just consume the API using Savon
+client.operations
+# => [:enviar, :analisa_n_fe, :consultar, :consulta_token, :cancelar, :carta_correcao, :inutilizar, :consultar_cadastro_sefaz, :consultar_nota_sefaz, :status_servico, :retorna_danfe, :retorna_chaves, :retorna_xmls, :insere_emissor, :insere_armazenamento, :existe_emissor, :existe_armazenamento]
+```
 
 ## Contributing
 

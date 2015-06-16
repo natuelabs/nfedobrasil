@@ -1,3 +1,3 @@
-module Nfedobrasil
-  VERSION = "0.0.1"
+module NfedoBrasil
+  VERSION = '0.1.0'
 end
