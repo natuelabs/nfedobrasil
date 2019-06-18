@@ -6,7 +6,7 @@ module NfedoBrasil
   def self.client(config = {}, dev_mode = false)
     config = {
       wsdl: (dev_mode ?
-        'https://dev.sistema.nfeplace.com.br/services/emissor?wsdl' :
+        'https://nfeplacehl.e-datacenter.nddigital.com.br/services/emissor?wsdl' :
         'https://ws-nfeplace.e-datacenter.nddigital.com.br/services/emissor?wsdl'),
       ssl_verify_mode: :none
     }.merge config

@@ -18,7 +18,7 @@ describe NfedoBrasil do
     subject { NfedoBrasil.client({ssl_plcs_file: File.dirname(__FILE__) + '/../support/certificate.p12', ssl_plcs_password: 'nughee1O'}, true) }
 
     it 'handles dev mode properly' do
-      expect(subject.globals[:wsdl]).to match(/https:\/\/dev.sistema/)
+      expect(subject.globals[:wsdl]).to match(/https:\/\/nfeplacehl.e-datacenter/)
     end
   end
 end
