@@ -6,7 +6,7 @@ describe NfedoBrasil do
 
     it 'returns a Savon client' do
       expect(subject).to be_a Savon::Client
-      expect(subject.globals[:wsdl]).to match(/https:\/\/ws-nfeplace/)
+      expect(subject.globals[:wsdl]).to match(/https:\/\/nfeplacesis.e-datacenter/)
     end
 
     it 'fails because cert is invalid' do
