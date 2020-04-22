@@ -1,7 +1,5 @@
-[![Gem Version](https://badge.fury.io/rb/nfedobrasil.svg)](http://badge.fury.io/rb/nfedobrasil)
-[![Build Status](https://travis-ci.org/natuelabs/nfedobrasil.svg?branch=master)](https://travis-ci.org/natuelabs/nfedobrasil)
-[![Code Climate](https://codeclimate.com/github/natuelabs/nfedobrasil/badges/gpa.svg)](https://codeclimate.com/github/natuelabs/nfedobrasil)
-[![Test Coverage](https://codeclimate.com/github/natuelabs/nfedobrasil/badges/coverage.svg)](https://codeclimate.com/github/natuelabs/nfedobrasil/coverage)
+[![Gem Version](https://badge.fury.io/rb/nfeplace-client.svg)](http://badge.fury.io/rb/nfeplace-client)
+[![Build Status](https://travis-ci.org/natuelabs/nfeplace-client.svg?branch=master)](https://travis-ci.org/natuelabs/nfeplace-client)
 
 # NfedoBrasil
 
